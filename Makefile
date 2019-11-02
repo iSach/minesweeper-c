@@ -18,7 +18,7 @@ clean:
 	$(RM) $(OBJS) $(PROG)
 
 run: $(PROG)
-	./$(PROG) 20 10 10 0
+	./$(PROG) 20 10 35 0
 
 runwin: $(PROG)
 	$(PROG).exe

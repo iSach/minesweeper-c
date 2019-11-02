@@ -23,7 +23,8 @@ int main(int argc, char **argv) {
 
     gridPrint(g);
 
-    gridSetFlag(g, 7, 4);
+    gridReveal(g, 0, 0);
+    //gridSetFlag(g, 10, 5);
 
     gridPrint(g);
 
