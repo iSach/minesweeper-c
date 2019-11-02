@@ -9,28 +9,6 @@
 #include "Solver.h"
 #include "Engine.h"
 
-int main(int argc, char **argv) {
-    if (argc != 5) {
-        printf("Wrong number of arguments");
-        return -1;
-    }
-    
-    int width = (int) strtol(argv[1], NULL, 0);
-    int height = (int) strtol(argv[2], NULL, 0);
-    int nbrBombs = (int) strtol(argv[3], NULL, 0);
-
-    Grid *g = gridInit(width, height, nbrBombs);
-
-    gridPrint(g);
-
-    gridReveal(g, 0, 0);
-    //gridSetFlag(g, 10, 5);
-
-    gridPrint(g);
-
-    return 0;
-}
-
 int main2(int argc, char **argv) {
     if (argc != 5) {
         printf("Wrong number of arguments");
@@ -40,8 +18,29 @@ int main2(int argc, char **argv) {
     int width = (int) strtol(argv[1], NULL, 0);
     int height = (int) strtol(argv[2], NULL, 0);
     int nbrBombs = (int) strtol(argv[3], NULL, 0);
-    int player = (int) strtol(argv[4], NULL, 0);
 
+    int a = rand() % 50;
+    printf("%d\n", a);
+
+    Grid *g = gridInit(width, height, nbrBombs);
+
+    gridPrint(g);
+
+    human(g);
+
+    return 0;
+}
+
+int main(int argc, char **argv) {
+    if (argc != 5) {
+        printf("Wrong number of arguments");
+        return -1;
+    }
+    
+    int width = (int) strtol(argv[1], NULL, 0);
+    int height = (int) strtol(argv[2], NULL, 0);
+    int nbrBombs = (int) strtol(argv[3], NULL, 0);
+    int player = (int) strtol(argv[4], NULL, 0);
     int success;
     if (player)
         success = play(width, height, nbrBombs, human, 1);
