@@ -4,7 +4,7 @@ CC = gcc
 PROG = minesweeper
 
 
-CFLAGS = -Wall -Wextra -Wmissing-prototypes --pedantic -std=c99
+CFLAGS = -Wall -Wextra -Weverything -Wmissing-prototypes --pedantic -std=c99
 LDFLAGS = -lm
 
 all: $(PROG)
@@ -18,7 +18,7 @@ clean:
 	$(RM) $(OBJS) $(PROG)
 
 run: $(PROG)
-	./$(PROG) 7 7 12 1
+	./$(PROG) 30 16 80 1
 
 runwin: $(PROG)
 	$(PROG).exe

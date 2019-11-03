@@ -9,28 +9,6 @@
 #include "Solver.h"
 #include "Engine.h"
 
-int main2(int argc, char **argv) {
-    if (argc != 5) {
-        printf("Wrong number of arguments");
-        return -1;
-    }
-    
-    int width = (int) strtol(argv[1], NULL, 0);
-    int height = (int) strtol(argv[2], NULL, 0);
-    int nbrBombs = (int) strtol(argv[3], NULL, 0);
-
-    int a = rand() % 50;
-    printf("%d\n", a);
-
-    Grid *g = gridInit(width, height, nbrBombs);
-
-    gridPrint(g);
-
-    human(g);
-
-    return 0;
-}
-
 int main(int argc, char **argv) {
     if (argc != 5) {
         printf("Wrong number of arguments");
